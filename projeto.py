@@ -8,7 +8,10 @@
 
 # Alexya - Listar
 
-
+def listagem (clientes):
+    for dicionario in clientes:
+        print (f'Nome:{clientes['nome']}, Idade: {clientes['idade']} e Cidade: {clientes['cidade']}. \n')
+        
 
 
 clientes = [
