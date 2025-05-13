@@ -1,4 +1,4 @@
-# Gabriel - Cadastrar
+# Gabriel - Cadastrar - Calcular a média das idade
 def cadastrar (nome, idade, cidade, listaclientes):
     cliente = {
         'nome': nome,
@@ -17,7 +17,7 @@ def cadastrar (nome, idade, cidade, listaclientes):
 
 
 
-# Alexya - Listar
+# Alexya - Listar - Criar função para deletar clientes
 
 def listagem (clientes):
     for dicionario in clientes:
