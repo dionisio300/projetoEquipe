@@ -1,5 +1,13 @@
 # Gabriel - Cadastrar
-
+def cadastrar (nome, idade, cidade, listaclientes):
+    cliente = {
+        'nome': nome,
+        'idade': idade,
+        'cidade': cidade
+    }
+    listaclientes.push(cliente)
+    return listaclientes
+    
 
 
 
