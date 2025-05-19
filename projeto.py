@@ -58,6 +58,8 @@ listagem(clientes)
 calcular_media_idade(clientes)
 
 
+# Conectar com o banco
+
 
 
 # while True - com as opções
