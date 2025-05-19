@@ -1,13 +1,11 @@
 # Gabriel - Cadastrar - Calcular a média das idade
-def cadastrar (nome, idade, cidade, listaclientes):
-    cliente = {
-        'nome': nome,
-        'idade': idade,
-        'cidade': cidade
-    }
-    listaclientes.append(cliente)
-    
-    return listaclientes
+def cadastrar (nome, idade, cidade, totalCompras):
+    conexao = conectarBanco()
+    cursor = conexao.cursor(dictionary=True)
+    sql = 'insert into clientes (nome, idade, cidade, totalCompras) values (%s,%s,%s,%s)'
+    cursor.execute(sql,(nome,idade,cidade,totalCompras))
+    conexao.commit()
+    return 'Dados Cadastrados'
 
 
 
@@ -52,14 +50,19 @@ clientes = [
 
 #Fazer um menu de opções 1 - cadastrar cliente, 2 - listar os clientes 3 - sair 
 
-listagem(clientes)
-cadastrar('Caio',25,'Quixadá',clientes)
-listagem(clientes)
-calcular_media_idade(clientes)
 
 
 # Conectar com o banco
-
+import mysql.connector as my
+def conectarBanco():
+    conexao = my.connect(
+        host = 'localhost',
+        user = 'root',
+        password = '1234',
+        database = 'clientes_db'
+    )
+    print('Conexão bem-sucedida!!')
+    return conexao
 
 
 # while True - com as opções
@@ -73,7 +76,10 @@ while True:
         nome = input('Digite o nome da pessoa: ')
         idade = int(input('Digite a idade da pessoa: '))
         cidade = input('Digite a cidade da pessoa: ')
-        cadastrar(nome,idade,cidade,clientes)
+        totalCompras = float(input('Digite o total de compras: '))
+
+        print(cadastrar(nome,idade,cidade,totalCompras))
+        
     if opcoes == '2':
         listagem(clientes)
     if opcoes == '4':
