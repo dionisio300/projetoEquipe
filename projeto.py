@@ -61,3 +61,12 @@ calcular_media_idade(clientes)
 
 
 # while True - com as opções
+
+
+
+
+
+
+
+
+
