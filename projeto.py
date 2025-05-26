@@ -56,8 +56,8 @@ clientes = [
 import mysql.connector as my
 def conectarBanco():
     conexao = my.connect(
-        host = 'localhost',
-        user = 'root',
+        host = '18.228.154.71',
+        user = 'gabriel',
         password = '1234',
         database = 'clientes_db'
     )
