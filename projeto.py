@@ -2,12 +2,32 @@
 
 
 # Crie uma função para atualizar a idade - Gabriel
+def atualizar_idade (id, idade):
+    conexao = conectarBanco()
+    cursor = conexao.cursor(dictionary=True)
+    sql = 'update clientes set idade= %s where id = %s'
+    cursor.execute(sql,(idade, id))
+    conexao.commit()
+    conexao.close()
+    return 'Idade atualizada'
+
+
+
 
 
 # Crie uma função para atualizar a cidade - Dionizio
 
 
 # crie uma função para incrementar o total de compras de uma pessoa - Gabriel
+def incrementar_compras (id, totalCompras):
+    conexao = conectarBanco()
+    cursor = conexao.cursor(dictionary=True)
+    sql = 'select * from clientes where id = %s'
+    cursor.execute(sql,(id,))
+    resultados = cursor.fetchone()
+    total = resultados["totalCompras"]
+    print(total + totalCompras)
+    return 'Compra atualizada'
 
 
 # Calcular a média de compra dos clientes - Alexya
@@ -81,7 +101,7 @@ def conectarBanco():
 
 
 # while True - com as opções - Dionizio
-
+incrementar_compras(3,100)
 while True:
     opcoes = input(f'1- Cadastrar\n 2- Listar Clientes\n 3- Sair\n 4- Media Idades\n')
     if opcoes == '3':
