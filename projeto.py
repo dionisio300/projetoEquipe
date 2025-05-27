@@ -1,3 +1,18 @@
+# Crie uma função para atualizar o nome - Alexya
+
+
+# Crie uma função para atualizar a idade - Gabriel
+
+
+# Crie uma função para atualizar a cidade - Dionizio
+
+
+# crie uma função para incrementar o total de compras de uma pessoa - Gabriel
+
+
+# Calcular a média de compra dos clientes - Alexya
+
+
 # Gabriel - Cadastrar - Calcular a média das idade
 def cadastrar (nome, idade, cidade, totalCompras):
     conexao = conectarBanco()
@@ -65,7 +80,7 @@ def conectarBanco():
     return conexao
 
 
-# while True - com as opções
+# while True - com as opções - Dionizio
 
 while True:
     opcoes = input(f'1- Cadastrar\n 2- Listar Clientes\n 3- Sair\n 4- Media Idades\n')
