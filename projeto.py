@@ -1,5 +1,15 @@
 # Crie uma função para atualizar o nome - Alexya
 
+def atualizar_nome_cliente(id,novoNome):
+    conexao = conectarBanco()
+    cursor = conexao.cursor(dictionary=True)
+    sql = "update clientes set nome = %s where id = %s"
+    cursor.execute(sql,(novoNome,id))
+    conexao.commit()
+    conexao.close()
+    return 'Nome atualizado'
+
+
 
 # Crie uma função para atualizar a idade - Gabriel
 
@@ -12,6 +22,21 @@
 
 # Calcular a média de compra dos clientes - Alexya
 
+def calcular_media_compras(resultados):   
+    soma_compras = 0
+    total_clientes = 0
+
+    for cliente in resultados:
+        soma_compras += cliente["totalCompras"]
+        total_clientes += 1
+
+    if total_clientes == 0:
+        media = 0
+
+    else:
+        media = soma_compras / total_clientes
+
+    return media
 
 # Gabriel - Cadastrar - Calcular a média das idade
 def cadastrar (nome, idade, cidade, totalCompras):
