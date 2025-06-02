@@ -10,7 +10,6 @@ def atualizar_nome_cliente(id,novoNome):
     return 'Nome atualizado'
 
 
-
 # Crie uma função para atualizar a idade - Gabriel
 
 
