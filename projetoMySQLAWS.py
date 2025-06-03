@@ -4,7 +4,7 @@ def conectarBanco():
     conexao = my.connect(
         host = 'database-1.czqmw2yyk7x8.sa-east-1.rds.amazonaws.com',
         user = 'admin',
-        password = '281220Le#',
+        password = '',
         database = 'testeaws'
     )
     print('Conexão bem-sucedida!!')
